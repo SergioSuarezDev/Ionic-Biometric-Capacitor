@@ -132,10 +132,11 @@ export class AlertsService {
       const data = await auth.available();
       const hasFingerPrintOrFaceAuth = data.has;
       if (hasFingerPrintOrFaceAuth) {
+        console.log("MOBILE TYPE -->" + JSON.stringify(data))
         const touch = data["touch"];
         const face = data["face"];
         if (touch) {
-          await auth.verify()
+          await auth.verifyWithFallback()
             .then(data => {
               console.log("TOUCH-OK: Going to home")
               this.navCtrl.navigateForward('/home', { animated: true })
