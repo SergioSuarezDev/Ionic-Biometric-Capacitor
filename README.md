@@ -21,10 +21,10 @@ Small Ionic framework app using only capacitor plugins
 <string>Biometric Authentication</string>
 ```
 
-###Getting Started
+####Getting Started
 
 To get started, clone this repo, and run npm install in the root directory.
 
-###Credits
+####Credits
 * Sergio Suárez
 * <https://www.sergiosuarezdev.com>
