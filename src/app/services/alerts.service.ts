@@ -30,15 +30,12 @@ export class AlertsService {
           text: 'Cancel',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: async () => {
-            console.log('Cancel');
-          }
+          handler: async () => {}
         }, {
           text: 'Confirm',
           handler: async (pass) => {
             let { password } = pass;
             await this.storage.set('user_pass', password);
-            this.ConfirmAIO()
           }
         }
       ]
@@ -66,17 +63,22 @@ export class AlertsService {
           text: 'Cancel',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: async () => {
-            console.log('Cancel');
-          }
+          handler: async () => {}
         }, {
           text: 'Confirm',
           handler: async (pass) => {
             let { password } = pass;
             let res = await this.storage.get('user_pass');
             if (res == password) {
-              this.ConfirmAIO()
+              //Test if this phone have Biometric Hardware
+              let auth, data;
+              try {
+                auth = new FingerPrintAuth();
+                data = await auth.available();
+                this.ConfirmAIO()
+              } catch (error) {}
               this.navCtrl.navigateForward('/home', { animated: true })
+
             } else this.toastError("Password Error")
 
           }
@@ -111,9 +113,7 @@ export class AlertsService {
           text: 'No',
           role: 'cancel',
           cssClass: 'primary',
-          handler: async (c) => {
-            console.log('Cancel');
-          }
+          handler: async (c) => {}
         }, {
           text: 'Yes',
           handler: async (o) => {
@@ -128,21 +128,26 @@ export class AlertsService {
 
   public async fingerPrintAIO() {
     try {
-      const auth = new FingerPrintAuth();
-      const data = await auth.available();
-      const hasFingerPrintOrFaceAuth = data.has;
+      let auth, data, hasFingerPrintOrFaceAuth;
+
+      try {
+        auth = new FingerPrintAuth();
+        data = await auth.available();
+        hasFingerPrintOrFaceAuth = data.has;
+      } catch (error) {
+        this.toastError("This phone do not have biometric hardware or you are using web navigator.")
+        return false;
+      }
+
       if (hasFingerPrintOrFaceAuth) {
-        console.log("MOBILE TYPE -->" + JSON.stringify(data))
         const touch = data["touch"];
         const face = data["face"];
         if (touch) {
           await auth.verifyWithFallback()
             .then(data => {
-              console.log("TOUCH-OK: Going to home")
               this.navCtrl.navigateForward('/home', { animated: true })
             })
             .catch(error => {
-              console.error(error)
               this.toastError("Biometric Error")
               return false
             });
@@ -150,18 +155,17 @@ export class AlertsService {
         if (face) {
           await auth.verifyWithFallback()
             .then(data => {
-              console.log("FACE-OK: Going to home")
               this.navCtrl.navigateForward('/home', { animated: true })
             })
             .catch(error => {
-              console.error(error)
               this.toastError("Biometric Error")
               return false
             });
         }
       }
     } catch (error) {
-      this.toastError("Check Biometric with real Phone")
+      this.toastError("This phone do not have biometric hardware or you are using web navigator.")
+      return false;
     }
   }
 }

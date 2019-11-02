@@ -21,9 +21,7 @@ export class AppComponent {
     try {
       await SplashScreen.hide()
       await StatusBar.setStyle({ style: StatusBarStyle.Light })
-    } catch (err) {
-      console.log('This is normal in a browser', err);
-    }
+    } catch (err) {}
   }
 
   async ngOnInit() {
