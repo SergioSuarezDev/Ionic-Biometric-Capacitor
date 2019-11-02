@@ -135,12 +135,28 @@ export class AlertsService {
         const touch = data["touch"];
         const face = data["face"];
         if (touch) {
-          let a = await auth.verify()
-          console.log("FACEOK " + a)
+          await auth.verify()
+            .then(data => {
+              console.log("TOUCH-OK: Going to home")
+              this.navCtrl.navigateForward('/home', { animated: true })
+            })
+            .catch(error => {
+              console.error(error)
+              this.toastError("Biometric Error")
+              return false
+            });
         }
         if (face) {
-          let f = await auth.verifyWithFallback();
-          console.log("FACEOK " + f)
+          await auth.verifyWithFallback()
+            .then(data => {
+              console.log("FACE-OK: Going to home")
+              this.navCtrl.navigateForward('/home', { animated: true })
+            })
+            .catch(error => {
+              console.error(error)
+              this.toastError("Biometric Error")
+              return false
+            });
         }
       }
     } catch (error) {
