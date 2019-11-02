@@ -1,0 +1,8 @@
+{
+  "name": "ionic-biometric",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

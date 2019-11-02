@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Ionic Biometric Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row class="login-row ion-justify-content-center">
+    <img src="assets/img/locked.svg" class="lock-img" tappable (click)="unLock()">
+  </ion-row>
+  <ion-row class="login-row ion-justify-content-center">
+    <ion-text class="ion-text-center" color="dark">
+      <h5>Click on lock to start or click remove data to wipe local storage</h5>
+    </ion-text>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-button (click)="removeData()" class="button" color="danger">
+      Remove Data
+    </ion-button>
+  </ion-row>
+</ion-content>
