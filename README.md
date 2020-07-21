@@ -38,7 +38,7 @@ To get started, clone this repo, and run: ```npm install``` in the root director
 `ionic cap run ios/android
 `
 ### Secure Storage
-If you want to use a secure Storage install this plugin:
+If you want to use a **Secure Storage for password** install this plugin:
 <https://github.com/martinkasa/capacitor-secure-storage-plugin>
 
 ### Updates 
