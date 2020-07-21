@@ -5,7 +5,7 @@
 Small Ionic framework app using Capacitor & Ionic Plugin
 <https://ionicframework.com> 
 
-Working properly with **Android & iOS mobiles**. (tested with emulator)
+Working properly with **Android & iOS phones**. (tested with emulator)
 
 <img src="demo/demo.gif" data-canonical-src="demo/demo.gif" width="200"/>
 
