@@ -5,8 +5,9 @@ const { Storage } = Plugins;
 @Injectable({
   providedIn: 'root'
 })
-export class StorageService {
 
+
+export class StorageService {
 
   constructor() { }
 

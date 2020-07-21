@@ -7,17 +7,15 @@ import { StorageService } from '../../services/storage.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
 
+export class LoginPage implements OnInit {
 
   constructor(
     private alerts: AlertsService,
     private storage: StorageService
-
   ) { }
 
   ngOnInit() { }
-
   ionViewWillEnter() {
     this.unLock()
   }

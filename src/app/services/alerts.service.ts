@@ -8,6 +8,7 @@ const { Device } = Plugins;
 @Injectable({
   providedIn: 'root'
 })
+
 export class AlertsService {
   constructor(
     private alertCtrl: AlertController,
