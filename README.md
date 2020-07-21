@@ -1,4 +1,5 @@
 # Biometric login
+<img src="https://www.airpair.com/img/software/ionic.png" width="200">
 
 
 Small Ionic framework app using Capacitor & Ionic Plugin
@@ -6,7 +7,7 @@ Small Ionic framework app using Capacitor & Ionic Plugin
 
 Working properly with **Android & iOS mobiles**. (tested with emulator)
 
-<img src="https://www.airpair.com/img/software/ionic.png" width="200">
+<img src="demo/demo.gif" data-canonical-src="demo/demo.gif" width="200"/>
 
 ### Plugins usage:
 
@@ -51,3 +52,6 @@ If you want to use a **Secure Storage for password** install this plugin:
 
 ### Credits
 Sergio Suárez - <https://www.sergiosuarezdev.com>
+
+
+
