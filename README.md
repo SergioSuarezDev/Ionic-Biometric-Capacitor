@@ -31,12 +31,15 @@ import androidx.core.content.ContextCompat;
 
 ### Getting Started
 
-To get started, clone this repo, and run npm install in the root directory.
+To get started, clone this repo, and run: ```npm install``` in the root directory.
 
 ### Test with emulator
 
 `ionic cap run ios/android
 `
+### Secure Storage
+If you want to use a **Secure Storage for password** install this plugin:
+<https://github.com/martinkasa/capacitor-secure-storage-plugin>
 
 ### Updates 
 
@@ -47,5 +50,4 @@ To get started, clone this repo, and run npm install in the root directory.
 * 1.0.0 - Initial project
 
 ### Credits
-* Sergio Suárez
-* <https://www.sergiosuarezdev.com>
+Sergio Suárez - <https://www.sergiosuarezdev.com>
