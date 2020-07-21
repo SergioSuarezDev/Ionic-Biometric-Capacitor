@@ -9,6 +9,7 @@ import { StorageService } from '../../services/storage.service';
 })
 export class LoginPage implements OnInit {
 
+
   constructor(
     private alerts: AlertsService,
     private storage: StorageService
@@ -37,6 +38,7 @@ export class LoginPage implements OnInit {
   async removeData() {
     await this.storage.remove('user_pass');
     await this.storage.remove('biometric');
+    this.alerts.toastInfo("Data Removed!")
   }
 
 }

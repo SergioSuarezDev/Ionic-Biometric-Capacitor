@@ -1,30 +1,29 @@
 import { Injectable } from '@angular/core';
-import 'capacitor-secure-storage-plugin';
 import { Plugins } from '@capacitor/core';
-const { SecureStoragePlugin } = Plugins;
+const { Storage } = Plugins;
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
 
+
   constructor() { }
 
   public async set(key, value) {
-    return await SecureStoragePlugin.set({ key, value })
-    .then(value => {
-      return true
-    })
-    .catch(error => {
-      return false
-    });
+    return await Storage.set({ key, value })
+      .then(value => {
+        return true
+      })
+      .catch(error => {
+        return false
+      });
   }
 
   public async get(key) {
-    return await SecureStoragePlugin.get({ key })
+    return await Storage.get({ key })
       .then(data => {
-        if (data.value.includes("ée")) return false
-        else return data.value
+        return JSON.parse(data.value)
       })
       .catch(error => {
         return error
@@ -32,12 +31,12 @@ export class StorageService {
   }
 
   public async remove(key) {
-    return await SecureStoragePlugin.remove({ key })
-    .then(value => {
-      return true
-    })
-    .catch(error => {
-      return false
-    });
+    return await Storage.remove({ key })
+      .then(value => {
+        return true
+      })
+      .catch(error => {
+        return false
+      });
   }
 }

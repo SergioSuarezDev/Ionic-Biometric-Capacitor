@@ -1,7 +1,6 @@
 {
-  "name": "ionic-biometric",
+  "name": "myApp",
   "integrations": {
-    "cordova": {},
     "capacitor": {}
   },
   "type": "angular"
