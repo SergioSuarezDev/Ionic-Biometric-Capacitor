@@ -44,6 +44,7 @@ If you want to use a **Secure Storage for password** install this plugin:
 
 ### Updates 
 
+* 1.1.3 - Updated dependencies
 * 1.1.2 - Updated README with Android import fixes
 * 1.1.1 - Changed fingerprint plugin to Finterprint AIO
 * 1.1.0 - Updated Ionic to v5 and Angular to v9
@@ -52,6 +53,3 @@ If you want to use a **Secure Storage for password** install this plugin:
 
 ### Credits
 Sergio Suárez - <https://www.sergiosuarezdev.com>
-
-
-
