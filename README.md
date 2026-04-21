@@ -52,4 +52,4 @@ If you want to use a **Secure Storage for password** install this plugin:
 * 1.0.0 - Initial project
 
 ### Credits
-Sergio Suárez - <https://www.sergiosuarezdev.com>
+Sergio Suárez - <https://www.sergiosuarezgil.com>
